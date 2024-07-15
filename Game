@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Create Random Numbers Between 1 & 100
+
+target=$((RANDOM % 100 + 1))
+
+echo "Think You Can Guess The Number?"
+echo "I Am Thinking Of A Number Between 1 & 100"
+
+#Loop Until Number Is Guessed Correctly
+
+while true; do
+	read -p "Enter Guess: " guess
+	if (( guess < target )); then
+		echo "Too Low. Try Again."
+	elif (( guess > target )); then
+		echo "Too High. Try Again."
+	else
+		echo "Yay! Correct!"
+		break
+	fi
+done
